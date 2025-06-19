@@ -1,3 +1,4 @@
+/* This probably is not actually used anywhere, but i might aswell have.. */
 import { Link, Stack } from 'expo-router';
 import { StyleSheet } from 'react-native';
 
