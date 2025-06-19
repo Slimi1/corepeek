@@ -6,23 +6,17 @@ const DeviceMotionInfo = () => {
   const [motionData, setMotionData] = useState<DeviceMotionMeasurement | null>(null);
 
   useEffect(() => {
-    // Subscribe to device motion updates
     const subscription = DeviceMotion.addListener((data) => {
       setMotionData(data);
     });
 
-    // Set update interval (in ms)
     DeviceMotion.setUpdateInterval(10);
 
     return () => {
       subscription.remove();
     };
   }, []);
-
-  // Helper to safely render nested data
-  const safeValue = (obj: any, key: string) =>
-    obj && obj[key] != null ? String(obj[key]) : "N/A";
-
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Device Motion Info</Text>
@@ -56,7 +50,7 @@ const DeviceMotionInfo = () => {
           ? `alpha: ${motionData.rotationRate.alpha.toFixed(2)}, beta: ${motionData.rotationRate.beta.toFixed(2)}, gamma: ${motionData.rotationRate.gamma.toFixed(2)}`
           : "N/A"}
       </Text>
-
+      {/* Probably should work, but doesn't (i want to sleep) */}
       <Text style={styles.info}>Orientation: {motionData?.orientation ?? "N/A"}</Text>
     </View>
   );

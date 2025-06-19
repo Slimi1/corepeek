@@ -49,7 +49,8 @@ const SystemInfo = () => {
   }
 
   return (
-    <ScrollView style={[styles.container, {/* { backgroundColor: theme.background } */} ]}>
+    /* I do not care enough to fix this right now */
+    <ScrollView style={[styles.container, /* { backgroundColor: theme.background } */ ]}>
       <Text style={[styles.title, { color: theme.tint }]}>System Information</Text>
 
       <View style={[styles.infoBox, { backgroundColor: colorScheme === "dark" ? "#222" : "#eee" }]}>
