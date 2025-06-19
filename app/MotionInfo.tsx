@@ -1,11 +1,13 @@
-import SystemInfo from '@/components/SystemInfo';
+import DeviceMotionInfo from '@/components/MotionInfo';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default function SystemInfoScreen() {
+export default function MotionInfoScreen() {
   return (
     <View style={styles.container}>
-      <SystemInfo />
+      <ThemedText type="title">Motion</ThemedText>
+      <DeviceMotionInfo />
     </View>
   );
 }
