@@ -23,6 +23,16 @@ android/
 android/**/build/
 android/.gradle/
 
+# IOS
+ios/
+ios/build/
+ios/**/*.js
+ios/**/*.h
+ios/**/*.m
+ios/**/*.swift
+ios/**/*.xib
+ios/**/*.storyboard
+
 # Metro
 .metro-health-check*
 
