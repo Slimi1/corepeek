@@ -1,14 +1,14 @@
 import '@/assets/css/base.css';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Drawer } from 'expo-router/drawer';
 import { StatusBar } from 'expo-status-bar';
+import { useColorScheme } from "nativewind";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-reanimated';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -43,7 +43,14 @@ export default function RootLayout() {
               title: 'Not Found',
             }}
           />
-        </Drawer>
+          <Drawer.Screen
+            name="MotionInfo"
+            options={{
+              drawerLabel: 'Motion',
+              title: 'Motion',
+            }}
+          />
+          </Drawer>
         <StatusBar style="auto" />
       </ThemeProvider>
     </GestureHandlerRootView>
