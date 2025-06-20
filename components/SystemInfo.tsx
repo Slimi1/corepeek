@@ -30,7 +30,7 @@ const SystemInfo = () => {
         deviceType: DeviceInfo.getDeviceType(),
       };
       setDeviceInfo(info);
-
+      
       const total = await DeviceInfo.getTotalMemory();
       const used = await DeviceInfo.getUsedMemory();
       const free = total - used;
@@ -63,6 +63,7 @@ const SystemInfo = () => {
       </View>
 
       <View style={[styles.infoBox, { backgroundColor: colorScheme === "dark" ? "#333" : "#ddd" }]}>
+        <Text className="text-xs color-white"> I'm pretty sure that this does not actually work</Text>
         <Text style={[styles.sectionTitle, { color: theme.tint }]}>RAM Usage</Text>
         <Text style={[styles.infoText, { color: theme.text }]}>Total RAM: {formatBytes(ramInfo.total)}</Text>
         <Text style={[styles.infoText, { color: theme.text }]}>Used RAM: {formatBytes(ramInfo.used)}</Text>
