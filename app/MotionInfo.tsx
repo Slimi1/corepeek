@@ -1,12 +1,11 @@
 import DeviceMotionInfo from '@/components/MotionInfo';
-import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function MotionInfoScreen() {
   return (
     <View style={styles.container}>
-      <ThemedText type="title">Motion</ThemedText>
+      <Text className="text-2xl font-bold text-white">Motion</Text>
       <DeviceMotionInfo />
     </View>
   );
